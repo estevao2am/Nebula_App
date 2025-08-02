@@ -8,6 +8,7 @@ import { Icon } from "../../components/Icons/Icon";
 const ICON_SIZE=20
 type props = Pick<ScreenProps , 'title' | 'canGoBack'>
 export function ScreenHeader({title,canGoBack} : props){
+    const navigation = useNavigation()
     return (
         <Box  
          marginBottom="s24" 
@@ -17,6 +18,7 @@ export function ScreenHeader({title,canGoBack} : props){
         {canGoBack && (
 
         <TouchableOpacityBox 
+        onPress={navigation.goBack}
         flexDirection="row"
         alignItems='center' 
         >
